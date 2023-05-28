@@ -41,5 +41,12 @@ export class UsersController {
     getHello(@Request() req): String {
         return req.user;
     }
+
+    //GET / Logout
+    @Get('/logout')
+    logout(@Request() req): any {
+        req.session.destroy();
+        return {msg: 'User logged out successfully'};
+    }
     
 }
